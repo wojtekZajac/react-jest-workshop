@@ -5,20 +5,10 @@ import Coverage from './index';
 
 it('renders name and jobType', () => {
     const props = {
-        name: 'Wojtek test',
-        jobType: 'test',
+        name: 'John Doe',
+        jobType: 'Frontend Developer',
     };
 
     const wrapper = shallow(<Coverage {...props}/>);
-    expect(wrapper.text()).toEqual("Hi my name is Wojtek test and I'm a test");
-});
-
-it('handles no name param correctly', () => {
-    const props = {
-        name: null,
-        jobType: 'test',
-    };
-
-    const wrapper = shallow(<Coverage {...props}/>);
-    expect(wrapper.instance()).toEqual(null);
+    expect(wrapper.text()).toEqual("Hi my name is John Doe and I'm a Frontend Developer");
 });

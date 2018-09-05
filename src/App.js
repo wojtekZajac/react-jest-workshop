@@ -10,8 +10,44 @@ import {
   AccordionItemBody,
 } from 'react-accessible-accordion';
 
-
 import Basic from './components/Basic';
+import Coverage from './components/Coverage';
+import Function from './components/Function';
+
+const lessons = [
+  {
+    component: Basic,
+    description: 'Basic component',
+    props: {
+      name: 'John Doe',
+      jobType: 'Frontend Developer'
+    }
+  },
+  {
+    component: Coverage,
+    description: 'Coverage generation and analysis',
+    props: {
+      name: 'John Doe',
+      jobType: 'Frontend Developer'
+    }
+  },
+  {
+    component: Function,
+    description: 'Functions testing',
+    props: {
+      name: 'john',
+      surname: 'doe',
+      jobType: 'Frontend Developer'
+    }
+  },
+];
+
+const renderComponent = ({component, props}) => {
+  const ComponentToRender = component;
+  return (
+    <ComponentToRender {...props} />
+  )
+}
 
 class App extends Component {
   render() {
@@ -23,27 +59,17 @@ class App extends Component {
         </header>
         <section className="lessons">
           <Accordion>
-            <AccordionItem>
-              <AccordionItemTitle>
-                <h3>Lesson 1</h3>
-                <div>Basic component</div>
-              </AccordionItemTitle>
-              <AccordionItemBody>
-              <Basic 
-                  name='Wojtek'
-                  jobType='Frontend Developer'
-                />
-              </AccordionItemBody>
-            </AccordionItem>
-            <AccordionItem>
-              <AccordionItemTitle>
-                <h3>Lesson 2</h3>
-                <div>Coverage</div>
-              </AccordionItemTitle>
-              <AccordionItemBody>
-                <p>Body content</p>
-              </AccordionItemBody>
-            </AccordionItem>
+            {lessons.map((lesson, index) => (
+              <AccordionItem>
+                <AccordionItemTitle>
+                  <h3>Lesson {index+1}</h3>
+                  <div>{lesson.description}</div>
+                </AccordionItemTitle>
+                <AccordionItemBody>
+                  {renderComponent(lesson)}
+                </AccordionItemBody>
+              </AccordionItem>
+            ))}
           </Accordion>
         </section>
       </div>
