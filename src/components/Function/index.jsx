@@ -6,7 +6,12 @@ const Function = (props) => {
     const { name, surname, jobType } = props;
 
     return (
-        <p>{`Hi my name is ${makeUppercase(name)} ${makeUppercase(surname)} and I'm a ${jobType}`}</p>
+        <p>
+        {
+            `I'm a smart component and I make name and surname uppercase!
+            Hi, I'm a ${makeUppercase(name)} ${makeUppercase(surname)} and I'm a ${jobType}`
+        }
+        </p>
     )
 }
 

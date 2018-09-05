@@ -13,6 +13,7 @@ import {
 import Basic from './components/Basic';
 import Coverage from './components/Coverage';
 import Function from './components/Function';
+import Snapshot from './components/Snapshot';
 
 const lessons = [
   {
@@ -34,6 +35,15 @@ const lessons = [
   {
     component: Function,
     description: 'Functions testing',
+    props: {
+      name: 'john',
+      surname: 'doe',
+      jobType: 'Frontend Developer'
+    }
+  },
+  {
+    component: Snapshot,
+    description: 'Working with snapshots',
     props: {
       name: 'john',
       surname: 'doe',
