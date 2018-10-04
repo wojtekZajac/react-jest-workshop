@@ -1,11 +1,12 @@
 import React from 'react';
 
-const Basic = (props) => {
-    const { name, jobType } = props;
-
+const Snapshot = ({name, jobType}) => {
     return (
-        <p>{`Hi my name is ${name} and I'm a ${jobType}`}</p>
+        <div>
+            <p>Snapshot testing</p>
+            <p>{`Hi my name is ${name} and I'm a ${jobType}`}</p>
+        </div>
     )
 }
 
-export default Basic;
+export default Snapshot;

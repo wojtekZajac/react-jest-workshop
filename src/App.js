@@ -60,6 +60,11 @@ const renderComponent = ({component, props}) => {
 }
 
 class App extends Component {
+
+  componentDidMount() {
+
+  }
+
   render() {
     return (
       <div className="App">
@@ -72,7 +77,7 @@ class App extends Component {
             {lessons.map((lesson, index) => (
               <AccordionItem>
                 <AccordionItemTitle>
-                  <h3>Lesson {index+1}</h3>
+                  <h3>Lesson {index + 1}</h3>
                   <div>{lesson.description}</div>
                 </AccordionItemTitle>
                 <AccordionItemBody>
